@@ -1,0 +1,352 @@
+.PropertyPreview {
+  margin: 1em;
+  border: 1px solid #ccc;
+
+  .property-address {
+    border-bottom: 1px solid #ccc;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    background-color: #eee;
+  }
+
+  .property-name {
+    padding: 0.5em;
+  }
+}
+
+.link {
+  cursor: pointer;
+}
+
+.home-link {
+   margin-top: 1em;
+   color: #0000ee;
+ }
+ .house-image {
+   width : 150;
+   height: 100;
+ }
+ .house-image-slide {
+   max-width : 100%;
+   max-height: 100%;
+ }
+.slide_show{
+  display:block;
+    width:60%;
+    object-fit: contain;
+    // height: 80%;
+    margin-left:auto;
+    margin-right:auto;
+   margin-top:50px;
+    //position:center;
+}
+#footer {
+  background-color: #f7f7f7;
+  color: #444;
+  padding: 5em 0 4em 0;
+  position: relative;
+}
+#footer .copyright {
+  color: #bbb;
+  font-size: 0.9em;
+  margin: 0 0 2em 0;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+section {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  display: block;
+  text-align: center;
+}
+
+	#banner {
+		background-color: #00cdcf;
+		color: #ffffff;
+		padding: 8em 0 6em 0;
+		text-align: center;
+	}
+
+		#banner input, #banner select, #banner textarea {
+			color: #ffffff;
+		}
+
+		#banner a {
+			color: #00cdcf;
+		}
+
+		#banner strong, #banner b {
+			color: #ffffff;
+		}
+
+		#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
+			color: #ffffff;
+		}
+
+		#banner blockquote {
+			border-left-color: rgba(255, 255, 255, 0.25);
+		}
+
+		#banner code {
+			background: rgba(255, 255, 255, 0.075);
+			border-color: rgba(255, 255, 255, 0.25);
+		}
+
+		#banner hr {
+			border-bottom-color: rgba(255, 255, 255, 0.25);
+		}
+
+		#banner input[type="submit"],
+		#banner input[type="reset"],
+		#banner input[type="button"],
+		#banner button,
+		#banner .button {
+			background-color: #f7f7f7;
+			color: #555 !important;
+		}
+
+			#banner input[type="submit"]:hover,
+			#banner input[type="reset"]:hover,
+			#banner input[type="button"]:hover,
+			#banner button:hover,
+			#banner .button:hover {
+				background-color: white;
+			}
+
+			#banner input[type="submit"]:active,
+			#banner input[type="reset"]:active,
+			#banner input[type="button"]:active,
+			#banner button:active,
+			#banner .button:active {
+				background-color: #eaeaea;
+			}
+
+			#banner input[type="submit"].alt,
+			#banner input[type="reset"].alt,
+			#banner input[type="button"].alt,
+			#banner button.alt,
+			#banner .button.alt {
+				background-color: transparent;
+				box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+				color: #ffffff !important;
+			}
+
+				#banner input[type="submit"].alt:hover,
+				#banner input[type="reset"].alt:hover,
+				#banner input[type="button"].alt:hover,
+				#banner button.alt:hover,
+				#banner .button.alt:hover {
+					background-color: rgba(255, 255, 255, 0.075);
+				}
+
+				#banner input[type="submit"].alt:active,
+				#banner input[type="reset"].alt:active,
+				#banner input[type="button"].alt:active,
+				#banner button.alt:active,
+				#banner .button.alt:active {
+					background-color: rgba(255, 255, 255, 0.2);
+				}
+
+				#banner input[type="submit"].alt.icon:before,
+				#banner input[type="reset"].alt.icon:before,
+				#banner input[type="button"].alt.icon:before,
+				#banner button.alt.icon:before,
+				#banner .button.alt.icon:before {
+					color: #99ebeb;
+				}
+
+			#banner input[type="submit"].special,
+			#banner input[type="reset"].special,
+			#banner input[type="button"].special,
+			#banner button.special,
+			#banner .button.special {
+				background-color: #009a9c;
+				color: #fff !important;
+			}
+
+				#banner input[type="submit"].special:hover,
+				#banner input[type="reset"].special:hover,
+				#banner input[type="button"].special:hover,
+				#banner button.special:hover,
+				#banner .button.special:hover {
+					background-color: #00b4b5;
+				}
+
+				#banner input[type="submit"].special:active,
+				#banner input[type="reset"].special:active,
+				#banner input[type="button"].special:active,
+				#banner button.special:active,
+				#banner .button.special:active {
+					background-color: #008183;
+				}
+
+		#banner h2 {
+			border-style: double solid;
+			border-width: 4px 1px;
+			font-size: 2.4em;
+			line-height: 1.35em;
+			margin: 0 auto 1em;
+			padding: 1.1em;
+			position: relative;
+			width: 40%;
+		}
+
+		#banner p {
+			font-size: 1.5em;
+			text-transform: uppercase;
+		}
+
+		@media screen and (max-width: 1680px) {
+
+			#banner {
+				padding: 8em 0 6em 0;
+			}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			#banner {
+				padding: 6em 0 4em 0;
+			}
+
+				#banner h2 {
+					width: 50%;
+				}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			#banner {
+				padding: 4em 2em 2em 2em;
+			}
+
+				#banner h2 {
+					width: 75%;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#banner {
+				padding: 3em 1.5em 1em 1.5em;
+			}
+
+				#banner h2 {
+					font-size: 2em;
+				}
+
+				#banner p {
+					font-size: 1.25em;
+				}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#banner {
+				padding: 3em 1em 1em 1em;
+			}
+
+				#banner h2 {
+					font-size: 1.65em;
+					width: 100%;
+				}
+
+		}
+    ul.actions {
+			cursor: default;
+			list-style: none;
+			padding-left: 0;
+		}
+ /*
+ .slider {
+	height: 300px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+
+.sliderWrap {
+	background: #cecece;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 10px 0px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+  transition: all 1s ease;
+}
+
+.slide {
+	background: #efefef;
+	box-sizing: border-box;
+	float: left;
+	height: 100%;
+	text-align: center;
+}
+
+.arrow {
+	background: rgba(0,0,0,0.4);
+	border-radius: 50%;
+	cursor: pointer;
+	height: 100px;
+	position: absolute;
+	top: 100px;
+	width: 100px;
+}
+
+.arrow-left {
+	left: -50px;
+}
+
+.arrow-right {
+	right: -50px;
+}
+
+.bullets {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.bullet {
+	background: orange;
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	height: 15px;
+	margin: 5px;
+	width: 15px;
+}
+
+.bullet.active {
+	background: #c3c3c3;
+}
+
+ .slides {
+   border-color: #eee;
+   position: relative;
+   .slick-prev, .slick-next {
+     position: absolute;
+     top: 50%;
+   }
+   .slick-prev {
+     left: 5%;
+   }
+   .slick-next {
+     right: 5%;
+   }
+ }
+*/

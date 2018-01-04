@@ -1,0 +1,113 @@
+.PropertyPreview {
+  margin: 1em;
+  border: 1px solid #ccc; }
+  .PropertyPreview .property-address {
+    border-bottom: 1px solid #ccc;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    background-color: #eee; }
+  .PropertyPreview .property-name {
+    padding: 0.5em; }
+
+.link {
+  cursor: pointer; }
+
+.home-link {
+  margin-top: 1em;
+  color: #0000ee; }
+
+.house-image {
+  width: 150;
+  height: 100; }
+
+.slide_show {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px; }
+
+/*
+ .slider {
+	height: 300px;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+
+.sliderWrap {
+	background: #cecece;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 10px 0px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+  transition: all 1s ease;
+}
+
+.slide {
+	background: #efefef;
+	box-sizing: border-box;
+	float: left;
+	height: 100%;
+	text-align: center;
+}
+
+.arrow {
+	background: rgba(0,0,0,0.4);
+	border-radius: 50%;
+	cursor: pointer;
+	height: 100px;
+	position: absolute;
+	top: 100px;
+	width: 100px;
+}
+
+.arrow-left {
+	left: -50px;
+}
+
+.arrow-right {
+	right: -50px;
+}
+
+.bullets {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.bullet {
+	background: orange;
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	height: 15px;
+	margin: 5px;
+	width: 15px;
+}
+
+.bullet.active {
+	background: #c3c3c3;
+}
+
+ .slides {
+   border-color: #eee;
+   position: relative;
+   .slick-prev, .slick-next {
+     position: absolute;
+     top: 50%;
+   }
+   .slick-prev {
+     left: 5%;
+   }
+   .slick-next {
+     right: 5%;
+   }
+ }
+*/

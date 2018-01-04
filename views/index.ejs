@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  window.initialData = <%- JSON.stringify(initialData) -%>
+</script>
+<%- include('header') -%>
+  
+  <div id="root"><%- initialMarkup -%></div>
+
+
+  <script src="/bundle.js" charset="utf-8"></script>
+
+<%- include('footer') -%>
