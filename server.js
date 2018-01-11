@@ -32,10 +32,23 @@ server.get(['/property', '/property/:propertyId'], (req, res) => {
       res.status(404).send('Bad Request');
     });
 });
+// server.get('/property/:City', (req, res) => {
+//   serverRender(req.params.City)
+//     .then(({ initialMarkup, initialData }) => {
+//       res.render('index', {
+//         initialMarkup,
+//         initialData
+//       });
+//     })
+//     .catch(error=>{
+//       console.error(error);
+//       res.status(404).send('Bad Request');
+//     });
+// });
 server.get('/', (req, res) => {
   res.render('main')
 
-  
+
 });
 /*
 server.get(['/','/property/:propertyId'], (req, res) => {

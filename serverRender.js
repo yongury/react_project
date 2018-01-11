@@ -6,11 +6,17 @@ import App from './src/components/App';
 import config from './config';
 import axios from 'axios';
 
+const City = ["Vancouver","Burnaby"];
 
 const getApiUrl = propertyId => {
   //if propertyId exists
   //return api url with property Id
+
   if (propertyId) {
+  //  if(propertyId == "Vancouver" || "Burnaby")
+    if(City.indexOf(propertyId) != -1)
+      return `${config.serverUrl}/api/searchedProperties/${propertyId}`;
+
     return `${config.serverUrl}/api/properties/${propertyId}`;
   }
   //if propertyId doesn't exist
@@ -22,6 +28,12 @@ const getInitialData = (propertyId, apiData) => {
   //if propertyId exists
   //apiData is a single property data
   if (propertyId) {
+    //if(propertyId == "Vancouver" || "Burnaby")
+    if(City.indexOf(propertyId) != -1)
+      return {
+        properties: apiData.properties
+      }
+
     return {
       currentPropertyId: apiData._id,
       properties: {
@@ -47,7 +59,7 @@ const serverRender = (propertyId) =>
       const initialData = getInitialData(propertyId, resp.data);
       //call App.js with prop variable of initialData
       //set initialMarkup in index.ejs
-      //serveer side rendering 
+      //serveer side rendering
       return {
         initialMarkup: ReactDOMServer.renderToString(
           <App initialData={initialData} />

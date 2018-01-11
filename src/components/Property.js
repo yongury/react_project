@@ -15,6 +15,7 @@ class Property extends Component {
   componentDidMount() {
     this.props.fetchNotes(this.props.noteIds);
     var self = this;
+    //slide show
     //every 5 secs swhitch the image
     this.interval = setInterval(()=>{
       var pointer = self.state.pointer;
@@ -81,31 +82,30 @@ class Property extends Component {
           </div>
           <div className="panel-body">
             <div className="property-description">
-            <table>
-              <tbody>
-                <tr>
-                  <td>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
 
-                  </td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;
-                  </td>
-                  <td>
-                    address: {this.props.Address} {this.props.City} {this.props.province},
-                    {this.props.postalCode}
-                    <br/>
-                    Room : {this.props.Room}  Bathroom : {this.props.Bathroom}
-                    <br/>
-                    Registered Date : {this.props.registeredDate}
-                    <br/>
-                    price : {this.props.price}
-                    <br/>
-                    {this.props.description}
-                    <br/>
-                  </td>
-                </tr>
-              </tbody>
-             </table>
-
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                      address: {this.props.Address} {this.props.City} {this.props.province},
+                      {this.props.postalCode}
+                      <br/>
+                      Room : {this.props.Room}  Bathroom : {this.props.Bathroom}
+                      <br/>
+                      Registered Date : {this.props.registeredDate}
+                      <br/>
+                      price : {this.props.price}
+                      <br/>
+                      {this.props.description}
+                      <br/>
+                    </td>
+                  </tr>
+                </tbody>
+               </table>
             </div>
           </div>
         </div>
@@ -155,53 +155,53 @@ class Property extends Component {
             <form onSubmit ={this.editSubmit} className = "form-horizontal" >
               <div className="input-group">
                 <div>
-                <label className="control-label"> PRICE  </label>
-                <input type="text"
-                  placeholder={this.props.price}
-                  ref = "newPriceInput"
-                  className="form-control" /> ( put new price )
+                  <label className="control-label"> PRICE  </label>
+                  <input type="text"
+                    placeholder={this.props.price}
+                    ref = "newPriceInput"
+                    className="form-control" /> ( put new price )
                 </div>
                 <div>
-                <label> Room : </label>
-                <input type="text"
-                  placeholder={this.props.Room}
-                  ref = "newRoomInput"
-                  className="form-control" />( put the number of rooms )
+                  <label> Room : </label>
+                  <input type="text"
+                    placeholder={this.props.Room}
+                    ref = "newRoomInput"
+                    className="form-control" />( put the number of rooms )
                 </div>
                 <div> <label> Address </label>
                 <div>
-                 Street address:
-                <input type="text"
-                  placeholder={this.props.Address}
-                  ref = "newAddressInput"
-                  className="form-control"  />( put Street address, P.O. box )
+                   Street address:
+                  <input type="text"
+                    placeholder={this.props.Address}
+                    ref = "newAddressInput"
+                    className="form-control"  />( put Street address, P.O. box )
                 </div>
                 <div>
-                 City/Town:
-                <input type="text"
-                  placeholder={this.props.City}
-                  ref = "newCityInput"
-                  className="form-control" />
+                   City/Town:
+                  <input type="text"
+                    placeholder={this.props.City}
+                    ref = "newCityInput"
+                    className="form-control" />
                 </div>
                 <div>
-                 Province:
-                <input type="text"
-                  placeholder={this.props.province}
-                  ref = "newprovinceInput"
-                  className="form-control"  />
+                   Province:
+                  <input type="text"
+                    placeholder={this.props.province}
+                    ref = "newprovinceInput"
+                    className="form-control"  />
                 </div>
                 <div>
-                 Postal Code:
-                <input type="text"
-                  placeholder={this.props.postalCode}
-                  ref = "newpostalCodeInput"
-                  className="form-control"  />
+                   Postal Code:
+                  <input type="text"
+                    placeholder={this.props.postalCode}
+                    ref = "newpostalCodeInput"
+                    className="form-control"  />
                 </div>
               </div>
               </div>
-              <span className="input-group-btn">
-                <button type="submit" className="btn btn-info">Edit</button>
-              </span>
+                <span className="input-group-btn">
+                  <button type="submit" className="btn btn-info">Edit</button>
+                </span>
             </form>
           </div>
         </div>

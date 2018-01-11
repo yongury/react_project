@@ -35,6 +35,20 @@ router.get('/properties', (req, res) => {
        properties[property._id] = property;
      });
 });
+router.get('/searchedProperties/:City', (req, res) => {
+  let properties ={};
+  //find all properties only City
+  mdb.collection('properties').find({City:req.params.City})
+     .each((err, property)=> {
+       assert.equal(null, err);
+
+       if(!property) {
+         res.send({properties});
+         return;
+       }
+       properties[property._id] = property;
+     });
+});
 router.get('/notes/:noteIds', (req,res)=>{
   const noteIds = req.params.noteIds.split(',').map(ObjectID);
   let notes = {};

@@ -50,6 +50,20 @@ class App extends React.Component {
       });
     });
   };
+  //get properties by city name
+  fetchPropertyListSearched = (City) => {
+    pushState(
+      { currentPropertyId: null },
+      `/property/${City}`
+    );
+    api.fetchProperty(City).then(properties => {
+      this.setState({
+        currentPropertyId: null,
+        properties
+        }
+      });
+    });
+  };
   //get all property data
   fetchPropertyList = () =>{
     pushState(

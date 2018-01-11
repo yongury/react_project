@@ -13,6 +13,12 @@ export const fetchPropertyList =()=> {
               .then(resp => resp.data.properties);
 }
 //ajax get method
+//receive all property data
+export const fetchPropertyListSearched =(City)=> {
+  return axios.get(`/api/searchedProperties/${City}`)
+              .then(resp => resp.data.properties);
+}
+//ajax get method
 //receive all note data
 export const fetchNotes = noteIds => {
   return axios.get(`/api/notes/${noteIds.join(',')}`)
