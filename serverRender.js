@@ -6,7 +6,9 @@ import App from './src/components/App';
 import config from './config';
 import axios from 'axios';
 
-const City = ["Vancouver","Burnaby"];
+const City = ["All","Vancouver","Burnaby"];
+var initialFilterData={};
+var listVisible={};
 
 const getApiUrl = propertyId => {
   //if propertyId exists
@@ -25,15 +27,26 @@ const getApiUrl = propertyId => {
 };
 //store data with propertyId and apiData
 const getInitialData = (propertyId, apiData) => {
+  listVisible["City"]=false;
+  listVisible["MinPrice"]=false;
+  listVisible["MaxPrice"]=false;
   //if propertyId exists
   //apiData is a single property data
   if (propertyId) {
     //if(propertyId == "Vancouver" || "Burnaby")
-    if(City.indexOf(propertyId) != -1)
-      return {
-        properties: apiData.properties
-      }
+    if(City.indexOf(propertyId) != -1){
+      initialFilterData["cityName"]=propertyId;
+      initialFilterData["minPrice"]=0;
+      initialFilterData["maxPrice"]=10000000;
+      // listVisible["City"]="false";
 
+      //console.log(initialFilterData);
+      return {
+        properties: apiData.properties,
+        initialFilterData:initialFilterData,
+        listVisible:listVisible
+      }
+    }
     return {
       currentPropertyId: apiData._id,
       properties: {
@@ -41,10 +54,17 @@ const getInitialData = (propertyId, apiData) => {
       }
     };
   }
+  initialFilterData["cityName"]="All";
+  initialFilterData["minPrice"]=0;
+  initialFilterData["maxPrice"]=10000000;
+
+//  console.log("serverrender-initialfileter :"+initialFilterData);
   //if propertyId doesn't exist
   //apiData has all property data
   return {
-    properties: apiData.properties
+    properties: apiData.properties,
+    initialFilterData: initialFilterData,
+    listVisible: listVisible
   };
 };
 

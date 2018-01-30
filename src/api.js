@@ -14,8 +14,8 @@ export const fetchPropertyList =()=> {
 }
 //ajax get method
 //receive all property data
-export const fetchPropertyListSearched =(City)=> {
-  return axios.get(`/api/searchedProperties/${City}`)
+export const fetchPropertyListSearched =(query)=> {
+  return axios.get(`/api/searchedProperties/${query}`)
               .then(resp => resp.data.properties);
 }
 //ajax get method

@@ -155,14 +155,14 @@ class Property extends Component {
             <form onSubmit ={this.editSubmit} className = "form-horizontal" >
               <div className="input-group">
                 <div>
-                  <label className="control-label"> PRICE  </label>
+                  <label className="control-label"> Price  </label>
                   <input type="text"
                     placeholder={this.props.price}
                     ref = "newPriceInput"
                     className="form-control" /> ( put new price )
                 </div>
                 <div>
-                  <label> Room : </label>
+                  <label> Room  </label>
                   <input type="text"
                     placeholder={this.props.Room}
                     ref = "newRoomInput"
@@ -170,28 +170,28 @@ class Property extends Component {
                 </div>
                 <div> <label> Address </label>
                 <div>
-                   Street address:
+                   Street address
                   <input type="text"
                     placeholder={this.props.Address}
                     ref = "newAddressInput"
                     className="form-control"  />( put Street address, P.O. box )
                 </div>
                 <div>
-                   City/Town:
+                   City/Town
                   <input type="text"
                     placeholder={this.props.City}
                     ref = "newCityInput"
                     className="form-control" />
                 </div>
                 <div>
-                   Province:
+                   Province
                   <input type="text"
                     placeholder={this.props.province}
                     ref = "newprovinceInput"
                     className="form-control"  />
                 </div>
                 <div>
-                   Postal Code:
+                   Postal Code
                   <input type="text"
                     placeholder={this.props.postalCode}
                     ref = "newpostalCodeInput"

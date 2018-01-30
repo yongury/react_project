@@ -13,9 +13,20 @@ MongoClient.connect(config.mongodbUri, (err, db) => {
 })
 
 const router = express.Router();
+// const cityList = [{
+//     name: "Red",
+//     hex: "#F21B1B"
+//   }, {
+//     name: "Blue",
+//     hex: "#1B66F2"
+//   }, {
+//     name: "Green",
+//     hex: "#07BA16"
+//   }];
 
 router.get('/properties', (req, res) => {
   let properties ={};
+
   //find all properties
   mdb.collection('properties').find({})
   /*   .project({
@@ -25,29 +36,56 @@ router.get('/properties', (req, res) => {
        price:1,
        images:1
      })
+
     */ .each((err, property)=> {
        assert.equal(null, err);
 
        if(!property) {
+
          res.send({properties});
          return;
        }
        properties[property._id] = property;
      });
 });
-router.get('/searchedProperties/:City', (req, res) => {
+//return filtered properties
+router.get('/searchedProperties/:query', (req, res) => {
   let properties ={};
-  //find all properties only City
-  mdb.collection('properties').find({City:req.params.City})
-     .each((err, property)=> {
-       assert.equal(null, err);
+  let query = req.params.query.split(',');
+//set if min, max was not defined
+  if(query[1]==null){
+    query[1]=0;
+    query[2]=10000000;
+  }
+//all properties with ranged price
+  if(query[0]=="All"){
+    mdb.collection('properties').find().sort({price:1})
+       .each((err, property)=> {
+         assert.equal(null, err);
 
-       if(!property) {
-         res.send({properties});
-         return;
-       }
-       properties[property._id] = property;
-     });
+         if(!property) {
+           res.send({properties});
+           return;
+         }
+         if(property.price >= query[1] && property.price <= query[2])
+            properties[property._id] = property;
+       });
+  }
+  //city and ranged properties
+  else{
+    mdb.collection('properties').find({City:query[0]}).sort({price:1})
+       .each((err, property)=> {
+         assert.equal(null, err);
+
+         if(!property) {
+           res.send({properties});
+           return;
+         }
+         if(property.price >= query[1] && property.price <= query[2])
+            properties[property._id] = property;
+       });
+  }
+
 });
 router.get('/notes/:noteIds', (req,res)=>{
   const noteIds = req.params.noteIds.split(',').map(ObjectID);
@@ -74,8 +112,7 @@ router.get('/properties/:propertyId', (req, res) => {
 });
 //update note
 router.post('/notes',(req,res)=>{
-  //console.log(req.body);
-  //res.send(req.body);
+
   const propertyId = ObjectID(req.body.propertyId);
   const note = req.body.newNote;
 
@@ -98,8 +135,7 @@ router.post('/notes',(req,res)=>{
 })
 //update property
 router.post('/property',(req,res)=>{
-  //console.log(req.body);
-  //res.send(req.body);
+
   const propertyId = ObjectID(req.body.propertyId);
   const price = req.body.newPrice;
   const room = req.body.newRoom;
@@ -133,19 +169,3 @@ router.post('/property',(req,res)=>{
 })
 
 export default router;
-/*
-router.get('/properties',(req,res)=> {
-  res.send({//array to object
-    properties: properties
-  });
-});
-
-router.get('/properties/:propertyId',(req,res)=>{
-  let property = properties[req.params.propertyId];
-  property.description = 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.'
-
-  res.send(property);
-});
-
-export default router;
-*/
